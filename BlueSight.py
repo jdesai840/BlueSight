@@ -13,6 +13,8 @@ from bleak import BleakClient
 from bleak import discover
 from neosensory_python import NeoDevice
 from time import sleep
+# picamera import required for raspberry pi deployment
+# from picamera import PiCamera
 
 
 endpoint = "https://hackathonformrecog.cognitiveservices.azure.com/"
@@ -37,6 +39,7 @@ def mic_call():
 
 
 def directional_guidance():
+#   camera.capture('street.jpg')       # Only required if picamera is being utilized, for demo just use the image path we provided
     image_path = ('street.jpg')
     image_stream = open(image_path, 'rb')
     image = Image.open('street.jpg')
@@ -69,6 +72,7 @@ def directional_guidance():
 
 
 def describe_image():
+#   camera.capture('street.jpg')       # Only required if picamera is being utilized, for demo just use the image path we provided
     image_path = ('street.jpg')
     image_stream = open(image_path, 'rb')
     description = classifier.describe_image_in_stream(image_stream)
@@ -94,6 +98,7 @@ def docu_read():
             
             
 def docu_search():
+#   camera.capture('form.jpg')       # Only required if picamera is being utilized, for demo just use the image path we provided
     formy = 'https://i.pinimg.com/736x/e8/0e/f3/e80ef353d3cae38810e0d88c1e96bf9d.jpg'
     poller = form_recognizer_client.begin_recognize_content_from_url(formy)
     page = poller.result()
