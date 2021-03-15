@@ -6,7 +6,7 @@ from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 import os
 
-cog_key = '51aad77763794bd6a109a32167f646cb'
+cog_key = 'INSERT KEY'
 cog_endpoint = 'https://cv-hackathon-test.cognitiveservices.azure.com/'
 classifier = ComputerVisionClient(cog_endpoint, CognitiveServicesCredentials(cog_key))
 
